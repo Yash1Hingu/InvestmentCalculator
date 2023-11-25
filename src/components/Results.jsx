@@ -1,7 +1,7 @@
 import { calculateInvestmentResults, formatter } from '../util/investment.js';
 export default function Results({ userInputs }) {
     const results = calculateInvestmentResults(userInputs);
-    const initialInvestment = results[0].valueEndOfYear - results[0].annualInvestment - results[0].interest;
+    const initialInvestment = results[0].valueEndOfYear - results[0].interest - results[0].annualInvestment;
     return (
         <table id="result">
             <thead>
