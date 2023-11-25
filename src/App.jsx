@@ -11,6 +11,7 @@ function App() {
     duration: 10
   });
 
+  const isValidInputs = userInputs.duration >= 1;
   function handleruserInput(inputIdentifier, newValue) {
     setUserInputs(prevUserInputs => {
       return {
@@ -26,7 +27,8 @@ function App() {
         onChange={handleruserInput}
         userInputs={userInputs}
       />
-      <Results userInputs={userInputs} />
+      {!isValidInputs && <p className='center'>Please , Enter Duration More Than 0 Years</p>}
+      {isValidInputs && <Results userInputs={userInputs} />}
     </>
   )
 }
