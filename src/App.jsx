@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import UserInput from "./components/UserInput";
+import Results from './components/Results';
 
 function App() {
 
@@ -20,10 +21,13 @@ function App() {
   }
 
   return (
-    <UserInput
-      onChange={handleruserInput}
-      userInputs={userInputs}
-    />
+    <>
+      <UserInput
+        onChange={handleruserInput}
+        userInputs={userInputs}
+      />
+      <Results userInputs={userInputs} />
+    </>
   )
 }
 
